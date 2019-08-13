@@ -14,8 +14,8 @@ class TodoList extends React.Component {
           
 
 
-<div className="w-full max-w-lg container mx-auto py-8">
-    <div ref="form" onSubmit={this.onSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div className="w-full max-w-lg container mx-auto ">
+    <div ref="form" onSubmit={this.onSubmit} className=" bg-gray-200 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
          <ul className="list-group">{items}</ul>
     </div>
 </div>
