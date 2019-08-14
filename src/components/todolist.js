@@ -4,18 +4,55 @@ import Todo from './todo.js';
 
 
 class TodoList extends React.Component {
+  constructor(props){
+    super(props);
+    this.showall = this.showall.bind(this);
+    this.showtodo = this.showtodo.bind(this);
+    this.showdoit = this.showdoit.bind(this);
+    this.state ={filtering : "all"}
+  }
+  showall(){
+    this.setState({filtering : "all"});
+    this.props.filter(this.state.filtering);
+  }
+  showtodo(){
+    this.setState({filtering : "todo"});
+    this.props.filter(this.state.filtering);
+  }
+  showdoit(){
+    this.setState({filtering : "doit"});
+    this.props.filter(this.state.filtering);
+  }
     render(){
       var items = this.props.items.map((item,index) =>{
         return(
-          <Todo key={index} item={item} index={index} removeItem={this.props.removeItem} markTodoDone={this.props.markTodoDone} />
+          <Todo key={index} item={item} index={index} removeItem={this.props.removeItem} markTodoDone={this.props.markTodoDone} editTodo={this.props.editTodo} />
         );
       });
+
+      
+
+ 
+
       return(
           
 
 
 <div className="w-full max-w-lg container mx-auto ">
-    <div ref="form" onSubmit={this.onSubmit} className=" bg-gray-200 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div ref="form" onSubmit={this.onSubmit} className=" bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
+    
+         <ul class="flex">
+          <li class="flex-1 mr-2">
+            <a onClick={this.showall} class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white" href="#">Active Item</a>
+          </li>
+          <li class="flex-1 mr-2">
+            <a onClick={this.showtodo} class="text-center block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4" href="#">Nav Item</a>
+          </li>
+          <li class="text-center flex-1">
+            <a onClick={this.showdoit} class="text-center block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4" href="#">Disabled Item</a>
+          </li>
+        </ul>
+    
          <ul className="list-group">{items}</ul>
     </div>
 </div>
