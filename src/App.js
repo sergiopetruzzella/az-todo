@@ -7,12 +7,12 @@ import Header from './components/header.js';
 
 
 var todoItems = [];
-todoItems.push({index: 1, value: "Write my todo list", done: true});
-todoItems.push({index: 2, value: "learn react", done: false});
-todoItems.push({index: 3, value: "learn Webpack", done: false});
-todoItems.push({index: 4, value: "learn ES6", done: true});
-todoItems.push({index: 5, value: "learn Routing", done: false});
-todoItems.push({index: 6, value: "learn Redux", done: false});
+todoItems.push({index: 0, value: "Write my todo list", done: true});
+todoItems.push({index: 1, value: "learn react", done: false});
+todoItems.push({index: 2, value: "learn Webpack", done: false});
+todoItems.push({index: 3, value: "learn ES6", done: true});
+todoItems.push({index: 4, value: "learn Routing", done: false});
+todoItems.push({index: 5, value: "learn Redux", done: false});
 
 var itemstoshow = [];
 itemstoshow = todoItems;
@@ -36,10 +36,12 @@ class TodoApp extends React.Component {
       value: todoItem.newItemValue,
       done: false
     });
+    this.setState({itodoItems: todoItems});
     this.setState({itemstoshow: todoItems});
   }
   removeItem(itemIndex){
     todoItems.splice(itemIndex,1);
+    this.setState({itodoItems: todoItems});
     this.setState({itemstoshow: todoItems});
   }
   markTodoDone(itemIndex){
@@ -50,11 +52,12 @@ class TodoApp extends React.Component {
     //todo.done ? todoItems.push(todo) : todoItems.unshift(todo);
 
     
-
+    this.setState({itodoItems: todoItems});
     this.setState({itemstoshow: todoItems});
   }
   editTodo(index,newname){
    todoItems[index].value = newname;
+   this.setState({itodoItems: todoItems});
    this.setState({itemstoshow: todoItems});
   }
   filterTodos(kind){
