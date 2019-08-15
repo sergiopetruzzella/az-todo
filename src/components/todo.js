@@ -31,7 +31,7 @@ class Todo extends React.Component {
     
     render(){
       var todoClass = this.props.item.done ? "opacity-50 bg-green-100":"bg-red-100";
-      var todoButtonText = this.props.item.done ? "unDone":"Done";
+      var todoButtonText = this.props.item.done ? "Undo":"Done";
 
       return(
         <li className="list-group-item">
@@ -42,14 +42,14 @@ class Todo extends React.Component {
                        <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
                       <input type="text" ref="itemName"  placeholder={this.props.item.value}/>
                       <div class="mt-4 right-0">
-                        <button  type="button" onClick={this.onClickEdit} class="mt-1 right-0 text-yellow-500 hover:text-white mx-1 hover:bg-yellow-500 border border-yellow-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Editalo</button>
+                        <button  type="button" onClick={this.onClickEdit} class="mt-1 right-0 text-yellow-500 hover:text-white mx-1 hover:bg-yellow-500 border border-yellow-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Edit</button>
                     </div>
                       </div>
                       
                       : 
                     <div  class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
                       
-                      <p onClick={this.onClickEdit} class="text-xl leading-tight" onDoubleClick="onDoubleClickEdit">
+                      <p onClick={this.onClickEdit} className="text-blue-900 text-xl leading-tight" onDoubleClick="onDoubleClickEdit">
                             {this.props.item.value}</p>
                   
                       <div class="mt-4 right-0">

@@ -43,13 +43,13 @@ class TodoList extends React.Component {
     
          <ul class="flex">
           <li class="flex-1 mr-2">
-            <a onClick={this.showall} class="text-center block border border-blue-200 rounded py-2 px-4 bg-white hover:bg-blue-100 text-blue-500">All</a>
+            <a onClick={this.showall} class="text-center block border border-blue-500 rounded py-2 px-4 bg-white text-blue-500 hover:bg-blue-500 hover:text-white">All</a>
           </li>
           <li class="flex-1 mr-2">
-            <a onClick={this.showtodo} class="text-center block border border-red-200 rounded hover:border-red-300 hover:bg-red-100 text-red-500 hover:bg-gray-200 py-2 px-4" >To-Do</a>
+            <a onClick={this.showtodo} class="text-center block border border-red-500 rounded py-2 px-4 bg-white text-red-500 hover:bg-red-500 hover:text-white" >To-Do</a>
           </li>
           <li class="text-center flex-1">
-            <a onClick={this.showdoit} class="text-center block border border-green-200 rounded hover:border-green-400 hover:bg-gren-100 text-green-500 hover:bg-green-100 py-2 px-4" >Done</a>
+            <a onClick={this.showdoit} class="text-center block border border-green-500 rounded py-2 px-4 bg-white text-green-500 hover:bg-green-500 hover:text-white">Done</a>
           </li>
         </ul>
     
