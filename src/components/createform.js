@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './header';
 
 {/* <form ref="form" onSubmit={this.onSubmit} classNameName="form-inline">
 <input type="text" ref="itemName" classNameName="form-control" placeholder="add a new todo..." />
@@ -44,7 +43,7 @@ class CreateForm extends React.Component {
           <div className="w-full max-w-lg container mx-auto py-8">
             <button onClick={this.toggle.bind(this)} className="ml-56 text-blue-500 hover:text-white hover:bg-blue-500 border border-blue-500 text-base center font-semibold rounded-full px-4 py-1 leading-normal">Add</button>
           </div>
-        <div style={ shown } className="w-full max-w-lg container mx-auto py-8">
+        <div style={ hidden } className="w-full max-w-lg container mx-auto py-8">
           <form ref="form" onSubmit={this.onSubmit} className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
               <label className="block text-blue-900 text-3xl text-sm mb-2" for="username">

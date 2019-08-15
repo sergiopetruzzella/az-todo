@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import TodoApp from './App.js'
+import TodoApp from './App.js';
 
 ReactDOM.render(<TodoApp />, document.getElementById('root'));
 

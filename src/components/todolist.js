@@ -9,7 +9,8 @@ class TodoList extends React.Component {
     this.showall = this.showall.bind(this);
     this.showtodo = this.showtodo.bind(this);
     this.showdoit = this.showdoit.bind(this);
-    this.state ={filtering : "all"}
+    this.state ={filtering : "all"};
+    this.state = {active1: false};
   }
   showall(){
     this.setState({filtering : "all"});
@@ -22,6 +23,9 @@ class TodoList extends React.Component {
   showdoit(){
     this.setState({filtering : "doit"});
     this.props.filter(this.state.filtering);
+  }
+  onClickActive1(){
+    this.setState({active1: true});
   }
     render(){
       var items = this.props.items.map((item,index) =>{

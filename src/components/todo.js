@@ -6,7 +6,8 @@ class Todo extends React.Component {
       this.onClickClose = this.onClickClose.bind(this);
       this.onClickDone = this.onClickDone.bind(this);
       this.onClickEdit = this.onClickEdit.bind(this);
-      this.state ={editing : false}
+      this.state ={editing : false};
+      this.state = {selected : false}
     }
     onClickClose(){
       var index = parseInt(this.props.index);
@@ -23,10 +24,7 @@ class Todo extends React.Component {
        var newname = this.refs.itemName.value;
        this.props.editTodo(index,newname);
        
-     }
-    
-
-      
+    }
     }
     
     render(){
