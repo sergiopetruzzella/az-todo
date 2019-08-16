@@ -40,25 +40,25 @@ class CreateForm extends React.Component {
 
       return( 
         <div>
-          <div className="w-full max-w-lg container mx-auto py-8">
-            <button onClick={this.toggle.bind(this)} className="ml-56 text-blue-500 hover:text-white hover:bg-blue-500 border border-blue-500 text-base center font-semibold rounded-full px-4 py-1 leading-normal">Add</button>
+          <div className="w-full max-w-lg container mx-auto py-2 sm:py-3 md:py-4 text-center my-0 ">
+            <button onClick={this.toggle.bind(this)} className=" text-blue-500 hover:text-white hover:bg-blue-500 border border-blue-500 text-base center font-semibold rounded-full px-4 py-1 leading-normal">Add</button>
           </div>
-        <div style={ hidden } className="w-full max-w-lg container mx-auto py-8">
-          <form ref="form" onSubmit={this.onSubmit} className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
-            <div className="mb-4">
-              <label className="block text-blue-900 text-3xl text-sm mb-2" for="username">
+        <div style={ hidden } className="w-full max-w-lg container mx-auto py-1 sm:py-2 md:py-3 my-0">
+          <form ref="form" onSubmit={this.onSubmit} className="bg-white shadow-lg rounded px-8 pt-3 sm:pt-4 pb-8 mb-1">
+            <div className="mb-2 sm:mb-3 md:mb-4">
+              <label className="block text-blue-900 text-lg sm:text-2xl  mb-1 sm:mb-2" for="username">
                 New Task
               </label>
-              <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+              <input className="shadow appearance-none border rounded w-full py-2 px-1 sm:px-3 text-xs sm:text-sm md:text-base text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
               type="text" ref="itemName" type="text" placeholder="Submit a new todo..." />
             </div>
           
-            <div className="flex items-center justify-end">
-              <button className="text-blue-500 hover:text-white hover:bg-blue-500 border border-blue-500 text-base mr-4 font-semibold rounded-full px-4 py-1 leading-normal" 
+            <div className="sm:flex items-center text-center sm:justify-end">
+              <button className="my-1 text-blue-500 hover:text-white hover:bg-blue-500 border border-blue-500 text-sm sm:text-base  mx-2 font-semibold rounded-full px-4 py-1 leading-normal" 
               type="submit">
                 Submit
               </button>
-              <button onClick={this.toggle.bind(this)} className="text-red-500 hover:text-white hover:bg-red-500 border border-red-500 text-base	 font-semibold rounded-full px-4 py-1 leading-normal" 
+              <button onClick={this.toggle.bind(this)} className="my-1 mx-2 text-red-500 hover:text-white hover:bg-red-500 border border-red-500 text-sm sm:text-base	 font-semibold rounded-full px-4 py-1 leading-normal" 
               type="submit">
                 Cancel
               </button>
