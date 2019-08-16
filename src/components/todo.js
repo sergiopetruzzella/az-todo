@@ -43,7 +43,7 @@ class Todo extends React.Component {
                         <button  type="button" onClick={this.onClickEdit} class="text-xs sm:text-sm md:text-base mt-1 right-0 text-yellow-500 hover:text-white mx-1 hover:bg-yellow-500 border border-yellow-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Edit</button>
                     </div>
                       </div>
-                      
+              
                       : 
                     <div  class="mt-1 sm:mt-2 sm:ml-4 text-center sm:text-left">
                       

@@ -95,7 +95,6 @@ class TodoApp extends React.Component {
     return(
       <div className="todoForm">
         <Header />
-        <Title />
         <CreateForm addItem={this.addItem} />
         <TodoList items={itemstoshow} removeItem={this.removeItem} markTodoDone={this.markTodoDone} editTodo={this.editTodo} filter={this.filterTodos}
         />
