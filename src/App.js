@@ -17,6 +17,7 @@ todoItems.push({index: 5, value: "learn Redux", done: false});
 
 var itemstoshow = [];
 itemstoshow = todoItems;
+var filtro ="all";
 
 
 
@@ -33,17 +34,21 @@ class TodoApp extends React.Component {
   }
   addItem(todoItem){
     todoItems.unshift({
-      index: todoItems.length+1,
+      index: 0,
       value: todoItem.newItemValue,
       done: false
     });
+    for (let i = 0; i < todoItems.length; i++) {todoItems[i].index=i;}
     this.setState({itodoItems: todoItems});
-    this.setState({itemstoshow: todoItems});
+    this.filterTodos(filtro)
+  
   }
   removeItem(itemIndex){
     todoItems.splice(itemIndex,1);
+    for (let i = 0; i < todoItems.length; i++) {todoItems[i].index=i;}
     this.setState({itodoItems: todoItems});
-    this.setState({itemstoshow: todoItems});
+    this.filterTodos(filtro)
+    
   }
   markTodoDone(itemIndex){
     var todo = todoItems[itemIndex];
@@ -52,16 +57,19 @@ class TodoApp extends React.Component {
     //todo.done = !todo.done;
     //todo.done ? todoItems.push(todo) : todoItems.unshift(todo);
 
-    
+    for (let i = 0; i < todoItems.length; i++) {todoItems[i].index=i;} 
     this.setState({itodoItems: todoItems});
-    this.setState({itemstoshow: todoItems});
+    this.filterTodos(filtro)
+  
   }
   editTodo(index,newname){
    todoItems[index].value = newname;
+   for (let i = 0; i < todoItems.length; i++) {todoItems[i].index=i;}
    this.setState({itodoItems: todoItems});
-   this.setState({itemstoshow: todoItems});
+   this.filterTodos(filtro)
   }
   filterTodos(kind){
+    filtro = kind;
     switch (kind) {
       case "all":
       itemstoshow = todoItems;
@@ -97,20 +105,5 @@ class TodoApp extends React.Component {
 }
 
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//     < Header />
-//       < Createform / > 
-//      < Todolist />
-    
-
-
-
-     
-//     </div>
-//   );
-// }
 
  export default TodoApp;

@@ -10,17 +10,17 @@ class Todo extends React.Component {
       this.state = {selected : false}
     }
     onClickClose(){
-      var index = parseInt(this.props.index);
+      var index = parseInt(this.props.item.index);
       this.props.removeItem(index);
     }
     onClickDone(){
-      var index = parseInt(this.props.index);
+      var index = parseInt(this.props.item.index);
       this.props.markTodoDone(index);
     }
     onClickEdit(){
       this.setState({ editing: !this.state.editing });
       if (this.state.editing) {  
-       var index = parseInt(this.props.index);
+       var index = parseInt(this.props.item.index);
        var newname = this.refs.itemName.value;
        this.props.editTodo(index,newname);
        
@@ -28,7 +28,7 @@ class Todo extends React.Component {
     }
     
     render(){
-      var todoClass = this.props.item.done ? "opacity-50 bg-green-100":"bg-red-100";
+      var todoClass = this.props.item.done ? "opacity-75 bg-green-100":"bg-red-100";
       var todoButtonText = this.props.item.done ? "Undo":"Done";
 
       return(

@@ -29,9 +29,11 @@ class TodoList extends React.Component {
   }
     render(){
       var items = this.props.items.map((item,index) =>{
+        console.log(item,index)
         return(
-          <Todo key={index} item={item} index={index} removeItem={this.props.removeItem} markTodoDone={this.props.markTodoDone} editTodo={this.props.editTodo} />
-        );
+          <Todo key={item.index} item={item} index={index} removeItem={this.props.removeItem} markTodoDone={this.props.markTodoDone} editTodo={this.props.editTodo} />
+          );
+          
       });
 
       
