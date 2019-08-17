@@ -8,12 +8,8 @@ import Title from './components/title.js';
 
 
 var todoItems = [];
-todoItems.push({index: 0, value: "Write my todo list", done: true});
-todoItems.push({index: 1, value: "learn react", done: false});
-todoItems.push({index: 2, value: "learn Webpack", done: false});
-todoItems.push({index: 3, value: "learn ES6", done: true});
-todoItems.push({index: 4, value: "learn Routing", done: false});
-todoItems.push({index: 5, value: "learn Redux", done: false});
+todoItems.push({index: 0, value: "Terminar distribucion de la turbina", done: true});
+
 
 var itemstoshow = [];
 itemstoshow = todoItems;

@@ -8,7 +8,7 @@ class Header extends React.Component {
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <img src='./Untitled-1.png' height="45" width="45"></img>
           </div>
-          <p className="text-white text-2xl ml-16">To-Do List</p>
+          <p className="text-white text-xs opacity-0 sm:opacity-100 sm:text-2xl ml-16">To-Do List</p>
           <p className="text-center text-white font-semibold text-xl mx-5 tracking-tight">Ampizzella</p>
 
         </nav>
